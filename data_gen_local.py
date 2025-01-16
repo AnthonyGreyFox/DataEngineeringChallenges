@@ -55,21 +55,21 @@ def generate_file(file_id, output_dir):
 
         # CBB (Difference)
         difference = quantity - total_accepted
-        lines.append(f"CBB|BalancingRequestClosed|{grid_id}|{difference}")
+        lines.append(f"CBB|BalancingRequestClosed|{grid_id}|{quantity}|{difference}")
 
     # Footer
     lines.append(f"ZZZ|{date}|{file_name}|{dt.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
     # Write to file
     with open(os.path.join(output_dir, file_name), "w") as f:
-        f.write("\n".join(lines))
+        f.write("\n".jo in(lines))
 
 # Generate 10 files
 def main():
     output_dir = "output_files"
     os.makedirs(output_dir, exist_ok=True)
 
-    for file_id in range(1, 11):
+    for file_id in range(1, 30):
         generate_file(file_id, output_dir)
 
     print(f"Generated 10 files in {output_dir}")
