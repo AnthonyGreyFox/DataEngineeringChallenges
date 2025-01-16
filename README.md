@@ -11,12 +11,12 @@ Balancing requests are generated and handled by grid monitoring devices with low
 
 ## Objective
 
-In the below mountpoint you find a collection of these text files, the data in these files has a hierachy as shown in the schema below but the files themselves are flat text files with no ids linking parent and child items. Therefore the order of the lines in the text files matters as it indicates which parent item each child belongs to.
+In the below mountpoint you will find one of these text files, the data in these files has a hierachy as shown in the schema below but the files themselves are flat text files with no ids linking parent and child items. Therefore the order of the lines in the text files matters as it indicates which parent item each child belongs to.
 
-Your objective is to ingest and normalise the data into tables with one table per type of item, you should be able to reconstruct the original file by joining your tables together.
+Your objective is to ingest and normalise the data into tables with one table per field of item, you should be able to reconstruct the original file by joining your tables together.
 
 
-### Schema
+## Schema
 
 Each line in a file begins with a three character string indicating which field that line belongs to.
 
@@ -39,16 +39,16 @@ previous BBB line.
 Data Structure:
 
         AAA|date|file_id|File_name|file_start_time
-        |    |
-        |    |--BBB|grid_id|balancing_quantity|balance_request_time|
-        |        |
-        |        --CAA|grid_id|bidding_entity_name|bidding_entity_id|
-        |        |    |
-        |        |    --CA1|grid_id|bid_quantity|bid_time|bid_offer
-        |        |    |
-        |        |    --CA2|bid_id|bid_status|bid_status_time
-        |        |    
-        |        --CBB|grid_id|balancing_quantity|difference
+        |  |
+        |  --BBB|grid_id|balancing_quantity|balance_request_time|
+        |       |
+        |       --CAA|grid_id|bidding_entity_name|bidding_entity_id|
+        |       |    |
+        |       |    --CA1|grid_id|bid_quantity|bid_time|bid_offer
+        |       |    |
+        |       |    --CA2|bid_id|bid_status|bid_status_time
+        |       |    
+        |       --CBB|grid_id|balancing_quantity|difference
         |
         ZZZ|date|file_name|file_end_time
         
