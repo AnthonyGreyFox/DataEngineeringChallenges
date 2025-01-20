@@ -1,6 +1,7 @@
-# de_code_challenge_jan
+# January Challenge
 
-## Context
+
+## Challenge context
 
 A fictional electrical grid operator South West Grid (SWG) is responsible for 10 grid areas, in each of these areas the SWG must balance the demand and availability of electricty. When demand is high it seeks to purchase units to fill any shortfall, if demand is less than availability it will seek to sell energy back to energy suppliers.
 
@@ -11,9 +12,14 @@ Balancing requests are generated and handled by grid monitoring devices with low
 
 ## Objective
 
-In the below mountpoint you will find one of these text files, the data in these files has a hierachy as shown in the schema below but the files themselves are flat text files with no ids linking parent and child items. Therefore the order of the lines in the text files matters as it indicates which parent item each child belongs to.
+In the below mountpoint you will find some of these text files, the data in these files has a hierachy as shown in the schema below but the files themselves are flat text files with no ids linking parent and child items. Therefore the order of the lines in the text files matters as it indicates which parent item each child belongs to.
 
-Your objective is to ingest and normalise the data into tables with one table per field of item, you should be able to reconstruct the original file by joining your tables together.
+A note on row order; in the real project this exercise is based there were many thousands of files with millions of lines per file, if the contents of the file were distributed across various workers during reading or subsequent operations there was no guarantee that the resulting dataframe would have the correct line order, which could result in the incorrect matching of child and parent items.
+
+Your objectives are to:
+
+- Ingest the files while preserving the parent child relationships given by the row order.
+- Normalise the data into tables/views with one table or view for each field (see below).
 
 
 ## Schema
@@ -52,3 +58,9 @@ Data Structure:
         |
         ZZZ|date|file_name|file_end_time
         
+Note: Some timestamps will be in POSIX timestamp format.
+
+
+## Team day  2025-01-31
+
+Lewis has made sure we have some time on our next team day to discuss our solutions and approaches to the problems posed in this kind of ingestion, in future we may make a bit of a fun competition out of these challenges with a small prize for the winner, but for our first one lets keep it relaxed and fun. I look forward to seeing all your creative solutions.
