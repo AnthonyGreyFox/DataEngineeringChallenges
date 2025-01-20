@@ -3,7 +3,7 @@
 
 ## Challenge context
 
-A fictional electrical grid operator South West Grid (SWG) is responsible for 10 grid areas, in each of these areas the SWG must balance the demand and availability of electricty. When demand is high it seeks to purchase units to fill any shortfall, if demand is less than availability it will seek to sell energy back to energy suppliers.
+A fictional electrical grid operator South West Grid (SWG) is responsible for 10 grid areas, in each of these areas the SWG must balance the demand and availability of electricity. When demand is high it seeks to purchase units to fill any shortfall, if demand is less than availability it will seek to sell energy back to energy suppliers.
 
 This is done through a balancing request, when SWG notices a balancing request is necessary in a grid it will open a balancing request for the required amount of energy. When a balance request is  opened the suppliers will submit bids, not all bids are necessarily accepted and sometimes SWG cannot fill a shortfall resulting in brownouts, or cannot sell surpless energy resulting in a financial loss.
 
