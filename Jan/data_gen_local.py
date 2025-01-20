@@ -67,13 +67,14 @@ def generate_file(file_id, output_dir):
 
 # Generate 10 files
 def main():
-    output_dir = f"{os.getcwd()}/output_files"
+    num_files_to_create = 10
+    output_dir = f"{os.getcwd()}/Jan/output_files"
     os.makedirs(output_dir, exist_ok=True)
 
-    for file_id in range(1, 2):
+    for file_id in range(0, num_files_to_create-1):
         generate_file(file_id, output_dir)
 
-    print(f"Generated 10 files in {output_dir}")
+    print(f"Generated {num_files_to_create} files in {output_dir}")
 
 if __name__ == "__main__":
     main()
