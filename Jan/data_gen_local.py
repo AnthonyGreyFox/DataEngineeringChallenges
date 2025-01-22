@@ -21,7 +21,7 @@ def generate_file(file_id, output_dir):
     lines.append(f"AAA|{date}|{file_id}|{file_name}|{dt.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
     # BBB (Load Balancing)
-    for _ in range(1, 10000):
+    for _ in range(1, 1000):
         grid_id = f"GRID_{random.randint(0,10)}"
         quantity = random.randint(-100, 100)
         lines.append(f"BBB|{grid_id}|{quantity}|{dt.now().timestamp()}")
@@ -48,7 +48,7 @@ def generate_file(file_id, output_dir):
 
             # CA1 (Bid Details)
             bid_time = dt.now().timestamp()
-            lines.append(f"CA1|{grid_id}|{bid_id}|{bid_quantity}|{bid_time}|{offer}")
+            lines.append(f"CA1|{grid_id}|{bid_quantity}|{bid_time}|{offer}")
 
             # CA2 (Bid Status)
             status_delay = random.randint(1, 10)
@@ -71,7 +71,7 @@ def main():
     output_dir = f"{os.getcwd()}/Jan/output_files"
     os.makedirs(output_dir, exist_ok=True)
 
-    for file_id in range(0, num_files_to_create):
+    for file_id in range(0, num_files_to_create-1):
         generate_file(file_id, output_dir)
 
     print(f"Generated {num_files_to_create} files in {output_dir}")
