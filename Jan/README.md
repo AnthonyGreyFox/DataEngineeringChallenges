@@ -52,7 +52,7 @@ Data Structure:
         |       |
         |       --CAA|grid_id|bidding_entity_name|bidding_entity_id|
         |       |    |
-        |       |    --CA1|grid_id|bid_quantity|bid_time|bid_offer
+        |       |    --CA1|grid_id|bid_id|bid_quantity|bid_time|bid_offer
         |       |    |
         |       |    --CA2|bid_id|bid_status|bid_status_time
         |       |    

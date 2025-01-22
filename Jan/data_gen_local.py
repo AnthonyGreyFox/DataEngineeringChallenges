@@ -48,7 +48,7 @@ def generate_file(file_id, output_dir):
 
             # CA1 (Bid Details)
             bid_time = dt.now().timestamp()
-            lines.append(f"CA1|{grid_id}|{bid_quantity}|{bid_time}|{offer}")
+            lines.append(f"CA1|{grid_id}|{bid_id}|{bid_quantity}|{bid_time}|{offer}")
 
             # CA2 (Bid Status)
             status_delay = random.randint(1, 10)
